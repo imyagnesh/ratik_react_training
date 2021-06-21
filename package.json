@@ -1,0 +1,26 @@
+{
+  "name": "ratik_training",
+  "version": "1.0.0",
+  "description": "Ratik react js training",
+  "main": "index.js",
+  "repository": "https://github.com/imyagnesh/ratik_react_training.git",
+  "author": "Yagnesh Modh <yagnesh.modh@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack serve"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "html-webpack-plugin": "^5.3.1",
+    "webpack": "^5.39.1",
+    "webpack-cli": "^4.7.2",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
