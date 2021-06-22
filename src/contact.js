@@ -1,2 +1,3 @@
-const contact = 7:
+const contact = 7;
+
 export default contact;

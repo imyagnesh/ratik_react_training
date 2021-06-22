@@ -1,6 +1,12 @@
-import abc from "./home";
-import moduleName from "./styles.css";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
-console.log(abc.a);
-console.log(abc.b);
-console.log(abc.c);
+// Component
+
+// Rules
+// 1. first letter of the component should be capital
+// 2. return only single element
+// 3. use className instead class
+
+ReactDOM.render(<App firstName="Yagnesh" age={10} />, document.getElementById('root'));
