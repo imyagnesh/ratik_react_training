@@ -10,6 +10,18 @@ class TodoApp extends Component {
 
   txtInput = createRef();
 
+  async componentDidMount() {
+    try {
+      const res = await fetch(
+        'http://localhost:8080/todoList',
+      );
+      const json = await res.json();
+      this.setState({
+        todoList: json,
+      });
+    } catch (error) {}
+  }
+
   addTodo = (event) => {
     event.preventDefault();
 
