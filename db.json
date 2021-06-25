@@ -4,6 +4,16 @@
       "todoText": "Get Milk",
       "isDone": false,
       "id": 1
+    },
+    {
+      "todoText": "Get Food",
+      "isDone": true,
+      "id": 2
+    },
+    {
+      "todoText": "Give training",
+      "isDone": false,
+      "id": 3
     }
   ]
 }
