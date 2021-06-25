@@ -5,7 +5,6 @@ import TodoList from './todoList';
 class TodoApp extends Component {
   state = {
     todoList: [],
-    filterType: 'all',
     loading: false,
     error: null,
   };
@@ -64,7 +63,6 @@ class TodoApp extends Component {
       this.setState(
         {
           todoList: [...todoList, json],
-          filterType: 'all',
           loading: false,
         },
         () => {
@@ -157,22 +155,22 @@ class TodoApp extends Component {
     }
   };
 
-  filterTodo = () => {
-    const { todoList, filterType } = this.state;
-    return todoList.filter((todo) => {
-      switch (filterType) {
-        case 'pending':
-          return !todo.isDone;
-        case 'completed':
-          return todo.isDone;
-        default:
-          return true;
-      }
-    });
-  };
+  // filterTodo = () => {
+  //   const { todoList, filterType } = this.state;
+  //   return todoList.filter((todo) => {
+  //     switch (filterType) {
+  //       case 'pending':
+  //         return !todo.isDone;
+  //       case 'completed':
+  //         return todo.isDone;
+  //       default:
+  //         return true;
+  //     }
+  //   });
+  // };
 
   render() {
-    const { loading, error } = this.state;
+    const { loading, error, todoList } = this.state;
 
     if (loading) {
       return <h1>Loading...</h1>;
@@ -190,15 +188,34 @@ class TodoApp extends Component {
           <button type="submit">Add Todo</button>
         </form>
         <TodoList
-          todoList={this.filterTodo()}
+          todoList={todoList}
           completeTodo={this.completeTodo}
           deleteTodo={this.deleteTodo}
         />
         <TodoFilter
-          onFilter={(filterType) => {
-            this.setState({
-              filterType,
-            });
+          onFilter={async (ft) => {
+            try {
+              let query = '';
+              if (ft === 'pending') {
+                query = '?isDone=false';
+              }
+              if (ft === 'completed') {
+                query = '?isDone=true';
+              }
+              const res = await fetch(
+                `http://localhost:8080/todoList${query}`,
+              );
+              const json = await res.json();
+
+              this.setState({
+                todoList: json,
+              });
+            } catch (err) {
+              this.setState({
+                loading: false,
+                error: err,
+              });
+            }
           }}
         />
       </div>
