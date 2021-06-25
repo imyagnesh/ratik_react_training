@@ -125,19 +125,36 @@ class TodoApp extends Component {
     }
   };
 
-  deleteTodo = (item) => {
-    const { todoList } = this.state;
-    const index = todoList.findIndex(
-      (x) => x.id === item.id,
-    );
-    const updatedTodos = [
-      ...todoList.slice(0, index),
-      ...todoList.slice(index + 1),
-    ];
+  deleteTodo = async (item) => {
+    try {
+      this.setState({
+        loading: true,
+      });
+      await fetch(
+        `http://localhost:8080/todoList/${item.id}`,
+        {
+          method: 'DELETE',
+        },
+      );
+      const { todoList } = this.state;
+      const index = todoList.findIndex(
+        (x) => x.id === item.id,
+      );
+      const updatedTodos = [
+        ...todoList.slice(0, index),
+        ...todoList.slice(index + 1),
+      ];
 
-    this.setState({
-      todoList: updatedTodos,
-    });
+      this.setState({
+        todoList: updatedTodos,
+        loading: false,
+      });
+    } catch (error) {
+      this.setState({
+        loading: false,
+        error,
+      });
+    }
   };
 
   filterTodo = () => {
