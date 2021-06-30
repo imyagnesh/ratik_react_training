@@ -1,18 +1,18 @@
 import React from 'react';
+import PageRouter from '../../components/PageRouter';
 
-const Contact = (props) => {
-  return (
-    <div>
-      <button
-        type="button"
-        onClick={() => {
-          props.history.replace('/about');
-        }}
-      >
-        Redirect To About Page
-      </button>
-    </div>
-  );
-};
+const Contact = ({ history, routes }) => (
+  <div>
+    {routes && <PageRouter routes={routes} />}
+    <button
+      type="button"
+      onClick={() => {
+        history.replace('/about');
+      }}
+    >
+      Redirect To About Page
+    </button>
+  </div>
+);
 
 export default Contact;
