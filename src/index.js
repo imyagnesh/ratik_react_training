@@ -9,4 +9,7 @@ import App from './App';
 // 2. return only single element
 // 3. use className instead class
 
-ReactDOM.render(<App firstName="Yagnesh" age={10} />, document.getElementById('root'));
+ReactDOM.render(
+  <App initLoading={false} />,
+  document.getElementById('root'),
+);

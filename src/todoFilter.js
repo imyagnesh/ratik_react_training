@@ -37,4 +37,7 @@ TodoFilter.propTypes = {
   onFilter: PropTypes.func.isRequired,
 };
 
-export default TodoFilter;
+export default React.memo(TodoFilter, () => {
+  console.log('hello');
+  return true;
+});

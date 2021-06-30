@@ -1,24 +1,24 @@
 {
   "todoList": [
     {
-      "todoText": "Get milk",
-      "isDone": true,
-      "id": 1
-    },
-    {
-      "todoText": "get food",
-      "isDone": true,
-      "id": 2
-    },
-    {
       "todoText": "give training",
-      "isDone": false,
+      "isDone": true,
       "id": 3
     },
     {
+      "todoText": "learn vue",
+      "isDone": true,
+      "id": 5
+    },
+    {
       "todoText": "learn react",
+      "isDone": true,
+      "id": 6
+    },
+    {
+      "todoText": "sdfsdfs",
       "isDone": false,
-      "id": 4
+      "id": 7
     }
   ]
 }

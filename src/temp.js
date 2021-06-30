@@ -25,6 +25,7 @@ class componentName extends PureComponent {
     }, 1000);
   }
 
+
   componentWillUnmount() {
     console.log('componentWillUnmount');
     document.removeEventListener(

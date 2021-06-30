@@ -8,9 +8,9 @@ const TodoList = ({
 }) => {
   console.log('render TodoList');
   return (
-    <div>
+    <div data-testid="todoList-container">
       {todoList.map((item) => (
-        <div key={item.id}>
+        <div key={item.id} data-testid="todoList-item">
           <input
             type="checkbox"
             checked={item.isDone}
@@ -43,4 +43,7 @@ TodoList.propTypes = {
   deleteTodo: PropTypes.func.isRequired,
 };
 
-export default memo(TodoList);
+export default memo(TodoList, () => {
+  console.log('hello');
+  return false;
+});

@@ -1,7 +1,23 @@
-import React from 'react';
+import React, { forwardRef, memo } from 'react';
+import PropTypes from 'prop-types';
 
-const TodoForm = () => {
-  return <div></div>;
+const TodoForm = forwardRef(({ addTodo }, ref) => {
+  console.log('render TodoForm');
+  return (
+    <form onSubmit={addTodo}>
+      <input type="text" ref={ref} required />
+      <button type="submit">Add Todo</button>
+    </form>
+  );
+});
+
+TodoForm.propTypes = {
+  addTodo: PropTypes.func.isRequired,
 };
 
-export default TodoForm;
+TodoForm.displayName = 'TodoForm';
+
+export default memo(TodoForm, () => {
+  console.log('hello');
+  return true;
+});
