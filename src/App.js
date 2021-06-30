@@ -119,6 +119,8 @@ const TodoApp = () => {
 
   useEffect(() => {
     fetchData();
+
+    return () => {};
   }, []);
 
   if (loading) {
@@ -135,7 +137,9 @@ const TodoApp = () => {
         </div>
       );
     }
-    return <h1>{error.message}</h1>;
+    return (
+      <h1 data-testid="error-header">{error.message}</h1>
+    );
   }
 
   return (
