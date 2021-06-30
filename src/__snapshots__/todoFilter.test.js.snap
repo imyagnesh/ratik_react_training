@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Todo Filter Component should match snapshot 1`] = `
+<div>
+  <button
+    type="button"
+  >
+    All
+  </button>
+  <button
+    type="button"
+  >
+    Pending
+  </button>
+  <button
+    type="button"
+  >
+    Completed
+  </button>
+</div>
+`;
