@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import AppRouter from './AppRouter';
 
 // Component
 
@@ -10,6 +10,6 @@ import App from './App';
 // 3. use className instead class
 
 ReactDOM.render(
-  <App initLoading={false} />,
+  <AppRouter />,
   document.getElementById('root'),
 );
