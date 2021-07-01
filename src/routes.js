@@ -3,6 +3,7 @@ import Profile from './pages/About/Profile';
 import SocialMedia from './pages/About/SocialMedia';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
+import Login from './pages/Login';
 import TodoApp from './pages/Todo';
 
 const routes = [
@@ -34,6 +35,11 @@ const routes = [
     path: '/contact',
     component: Contact,
     title: 'Contact',
+  },
+  {
+    path: '/login',
+    component: Login,
+    title: 'Login',
   },
   {
     path: '/todo',
