@@ -6,7 +6,7 @@ import React, {
   memo,
 } from 'react';
 import axios from './utils/axios';
-import TodoFilter from './todoFilter';
+import TodoFilter from './pages/Todo/todoFilter';
 import TodoList from './todoList';
 import TodoForm from './todoForm';
 

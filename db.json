@@ -12,13 +12,18 @@
     },
     {
       "todoText": "learn react",
-      "isDone": true,
+      "isDone": false,
       "id": 6
     },
     {
       "todoText": "sdfsdfs",
       "isDone": false,
       "id": 7
+    },
+    {
+      "todoText": "learn use reducer",
+      "isDone": false,
+      "id": 8
     }
   ]
 }
