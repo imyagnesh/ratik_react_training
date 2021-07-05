@@ -5,9 +5,9 @@ import { fields, initialValues } from './fields';
 const wait = (time) =>
   new Promise((resolve) => setTimeout(resolve, time));
 
-const Login = () => (
+const Register = () => (
   <div>
-    <h1>Login</h1>
+    <h1>Register</h1>
     <Form
       fields={fields}
       initialValues={initialValues}
@@ -16,10 +16,10 @@ const Login = () => (
         await wait(5000);
       }}
       btnProps={{
-        children: 'Login',
+        children: 'Register',
       }}
     />
   </div>
 );
 
-export default Login;
+export default Register;
